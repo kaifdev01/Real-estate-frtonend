@@ -80,13 +80,13 @@ export default function LoginSignup() {
             }
 
             try {
-                const response = await axios.post('https://real-estate-kaif-uzu3.vercel.app/api/auth/register', { username, email, password })
+                const response = await axios.post('http://localhost:5000/api/auth/register', { username, email, password })
                 setSuccess(response.data.message)
                 if (response.status === 201) {
                     navigate('/login')
                 }
             } catch (error) {
-                setError(error.response?.data?.error || 'Error occurred. Please try again later.')
+                setError(error.response?.data?.message || 'Error occurred. Please try again later.')
                 console.error('Signup error:', error)
             }
         }
