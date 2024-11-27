@@ -83,7 +83,7 @@ export default function LoginSignup() {
                 const response = await axios.post('https://real-estate-kaif-uzu3.vercel.app/api/auth/register', { username, email, password })
                 setSuccess(response.data.message)
                 if (response.status === 201) {
-                    navigate('/login')
+                    navigate('/')
                 }
             } catch (error) {
                 setError(error.response?.data?.message || 'Error occurred. Please try again later.')
