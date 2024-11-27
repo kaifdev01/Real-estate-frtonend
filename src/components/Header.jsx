@@ -134,15 +134,14 @@ export default function Header() {
                 )}
             >
                 <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                    <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</Link>
-                    <Link to="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">About</Link>
-                    <Link to="services" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Services</Link>
-                    <Link to="/properties" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Properties</Link>
-                    <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</Link>
+                    <Link onClick={() => setIsMenuOpen(false)} to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Home</Link>
+                    <Link onClick={() => setIsMenuOpen(false)} to="/properties" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Properties</Link>
+                    <Link onClick={() => setIsMenuOpen(false)} to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50">Contact</Link>
 
                     {isLoggedIn && isAdmin && (
                         <Link
                             to="/admin"
+                            onClick={() => setIsMenuOpen(false)}
                             className="block px-3 py-2 rounded-md text-base font-medium text-green-500 hover:bg-gray-100">
                             Dashboard
                         </Link>
